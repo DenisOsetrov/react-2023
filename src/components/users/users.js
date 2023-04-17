@@ -12,7 +12,7 @@ function Users ({xxx}) {
             }
         </div>
     );
-};
+}
 
 export default Users;
 
