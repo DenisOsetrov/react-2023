@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: flex-start;
+}
+.lift-side {
+border: 1px solid black;
+}
+.right-side {
+    border: 1px solid red;
+}
