@@ -13,28 +13,28 @@ function App() {
     //Щоб дістати інформацію, що знаходиться на 2 поверши нище використовуємо "state lifting"
     // виводить справа коментарі через CSS параметри.
     const lift = (obj)=> {
-    setChosenComment({...obj})
+        setChosenComment({...obj})
     }
-  return (
-    <div className={'container'}>
+    return (
+        <div className={'container'}>
 
-      {/*Створюємо компонент з кнопкою, який рахує кліки!*/}
-      {/*  Треба розкоментувати файл IncrementDecrement*/}
-      {/*<IncrementDecrement/>*/}
+            {/*Створюємо компонент з кнопкою, який рахує кліки!*/}
+            {/*  Треба розкоментувати файл IncrementDecrement*/}
+            {/*<IncrementDecrement/>*/}
 
-        <div className={'left-side'}>
-            <Comments lift={lift}/>
+            <div className={'left-side'}>
+                <Comments lift={lift}/>
+            </div>
+
+            {
+                chosenComment &&
+                ( <div className={'right-side'}>
+                    <FullComment value={chosenComment}/>
+                </div>)
+            }
+
         </div>
-
-        {
-            chosenComment &&
-           ( <div className={'right-side'}>
-                <FullComment value={chosenComment}/>
-            </div>)
-        }
-
-    </div>
-  );
+    );
 }
 
 export default App;
