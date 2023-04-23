@@ -1,4 +1,5 @@
 import {useState} from "react";
+// import {createRef} from "react";  // Це для другого варіанту!
 function App() {
   // let [login, setLogin] = useState('default');
   // let [password, setPassword] = useState('');
@@ -12,10 +13,11 @@ function App() {
   let [formState,setFormState]= useState({login: '', password: ''});
 
     function onSubmit (e) {
-    console.log(e.target.login.value);
-    console.log(e.target.password.value);
-    e.preventDefault();                 //зупиняємо перезапуск
-    console.log(formState);
+    // console.log(e.target.login.value);
+    // console.log(e.target.password.value);
+
+        e.preventDefault();                 //зупиняємо перезапуск браузера, тому можна відхопити дані в console.log
+        console.log(formState);             // Або відправити інформацію на API!
   }
 function onchange(e) {
      setFormState({...formState, [e.target.name]: e.target.value})
@@ -33,3 +35,31 @@ function onchange(e) {
 }
 
 export default App;
+
+
+        // Неконтрольований компонент форм!!!
+// import React from 'react';
+//
+// const App = () => {
+//
+//     let login = createRef();
+//     let password = createRef();
+//
+//     function onSubmit (e) {
+//         console.log(login.current.value);
+//         console.log(password.current.value);
+//         // create obj && sent to API;
+//         e.preventDefault();
+//     }
+//     return (
+//         <div>
+//             <form onSubmit={onSubmit}>
+//                 <input type="text" name={'login'} ref={login}/>
+//                 <input type='text' name={'password'} ref={password}/>
+//                 <button>log in</button>
+//             </form>
+//         </div>
+//     );
+// };
+//
+// export default App;
