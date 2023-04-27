@@ -7,7 +7,7 @@ function App() {
         <Cars/>
     </div>
   );
-};
+}
 
 export default App;
 
