@@ -26,7 +26,7 @@ const CarForm: FC<IProps> = ({setOnChange, carForUpdate, setCarForUpdate}) => {
     useEffect(() => {
         if (carForUpdate) {
             Object.entries(carForUpdate).forEach(([key, value]) => {  // Object.entries - з об'єкта робить масив в масиві, де в головному масиві на кожен ключ і значення буде свій масив.
-                if (key != 'id') {
+                if (key !== 'id') {
                     setValue(key as keyof ICar, value, {shouldValidate: true})  // оператор keyof типізує наш key - як ключ для ICar. В кінці - провалідуй значення.
                 }
             })
