@@ -1,15 +1,22 @@
 import React, {FC} from 'react';
 import {ICar} from "../interface/car.interface";
 import './CarForm.css';
-import {IUseState} from "../types/useState.type"; // підключення CSS файлу
+import {IUseState} from "../types/useState.type";
+import {carService} from "../services/car.service"; // підключення CSS файлу
 
 interface IProps {
     car: ICar;
-    setCarForUpdate:IUseState<ICar|null>;
+    setCarForUpdate: IUseState<ICar | null>;
+    setOnChange: IUseState<boolean>;
 }
 
-const Car: FC<IProps> = ({car,setCarForUpdate}) => {
-    const {id,brand, price,year} = car;
+const Car: FC<IProps> = ({car, setCarForUpdate, setOnChange}) => {
+    const {id, brand, price, year} = car;
+
+    const deleteCar = async () => {
+        await carService.deleteById(id);
+        setOnChange(prevState => !prevState)
+    }
 
     return (
         <div className={'CarSave'}>
@@ -21,7 +28,7 @@ const Car: FC<IProps> = ({car,setCarForUpdate}) => {
             </div>
             <div>
                 <button onClick={() => setCarForUpdate(car)}>update</button>
-                <button>delete</button>
+                <button onClick={() => deleteCar()}>delete</button>
             </div>
         </div>
 

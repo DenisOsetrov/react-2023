@@ -29,7 +29,7 @@ const CarPage:FC<IProps> = () => {
         <div>
             <CarForm setOnChange={setOnChange} carForUpdate={carForUpdate} setCarForUpdate={setCarForUpdate}/>
             <hr/>
-            <Cars cars={cars} setCarForUpdate={setCarForUpdate}/>
+            <Cars cars={cars} setCarForUpdate={setCarForUpdate} setOnChange={setOnChange}/>
         </div>
     );
 };
