@@ -9,21 +9,21 @@ interface IProps {
 
 }
 
-const CarPage:FC<IProps> = () => {
+const CarPage: FC<IProps> = () => {
     // Цей useState для виведення масиву всіх Cars
-   const [cars,setCars] = useState<ICar[]>([]);
+    const [cars, setCars] = useState<ICar[]>([]);
 
-   // Цей useState для збереження створеного Car
-   const [onChange, setOnChange] = useState<boolean>(false);
+    // Цей useState для збереження створеного Car
+    const [onChange, setOnChange] = useState<boolean>(false);
 
     // Цей useState для редагування - update Car
-    const [carForUpdate, setCarForUpdate] = useState<ICar|null>(null)
+    const [carForUpdate, setCarForUpdate] = useState<ICar | null>(null)
 
-   useEffect(() => {
-       carService.getAll()
-           .then(value => value.data)
-           .then(value => setCars(value))
-   },[onChange])
+    useEffect(() => {
+        carService.getAll()
+            .then(value => value.data)
+            .then(value => setCars(value))
+    }, [onChange])
 
     return (
         <div>
