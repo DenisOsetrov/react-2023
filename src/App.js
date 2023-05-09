@@ -1,10 +1,12 @@
-import {Link, Routes, Route} from "react-router-dom"
+import {Link, Routes, Route} from "react-router-dom"// Імпортуємо з бібліотеки, яку підключили
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import About from "./pages/About";
 import Users from "./Users";
 import Posts from "./Posts";
-import Comments from "./Comments";  // Імпортуємо з бібліотеки, яку підключили
+import Comments from "./Comments";
+import UserDetails from "./pages/UserDetails";
+import React from "react";
 
 // Розглянемо два підходи, як можна на перед прокидувати інформацію.
 // Для цього скористаємося двома компонентами Users & Posts.
@@ -41,11 +43,16 @@ function App() {
                         {/*<Route path={'/layout/comments'} element={<Comments/>}/>*/}
 
                         {/*Видаляємо /layout і спрощуємо код, залишаючись в компоненті Layout*/}
-                        <Route path={'users'} element={<Users/>}/>
-                        <Route path={'posts'} element={<Posts/>}/>
-                        <Route path={'comments'} element={<Comments/>}/>
+                        <Route path={'users'} element={<Users/>}>
+                        {/*динамічне додавання кожного елемента шляху (id зі своїм номером)*/}
+                        <Route path={':id'} element={<UserDetails/>}/>
                     </Route>
+                    <Route path={'posts'} element={<Posts/>}/>
+                    <Route path={'comments'} element={<Comments/>}/>
+                    </Route>
+
                     <Route path={'/about'} element={<About/>}/>
+
                 </Routes>
 
             </div>
