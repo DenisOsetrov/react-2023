@@ -7,7 +7,7 @@ const UserDetails = () => {
 
     // беремо state з User.component i hook useLocation()
     // наш state переіменуємо в user
-    let {state:user} = location;
+    let {state: user} = location;
 
     return (
         <div>

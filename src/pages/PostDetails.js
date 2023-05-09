@@ -13,7 +13,7 @@ const PostDetails = () => {
 
     useEffect(() => {
         apiService.getSingleData(id).then(value => setPost(value));
-    },[id])
+    }, [id])
 
 
     return (
