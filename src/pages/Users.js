@@ -10,7 +10,7 @@ const Users = () => {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(value => value.json())
             .then(value => setUsers(value));
-    },[])
+    }, [])
 
     return (
         <div>

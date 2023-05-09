@@ -6,7 +6,16 @@ const UserDetails = () => {
     let {state} = useLocation();
 
     // Ця const для деструктуризації, замість JSON.stringify
-    const {id, name, username, email, address: {street, suite, city, zipcode, geo: { lat, lng }}, phone, website, company: { name: companyName, catchPhrase, bs }} = state.item;
+    const {
+        id,
+        name,
+        username,
+        email,
+        address: {street, suite, city, zipcode, geo: {lat, lng}},
+        phone,
+        website,
+        company: {name: companyName, catchPhrase, bs}
+    } = state.item;
 
     return (
         <div>
