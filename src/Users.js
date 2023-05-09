@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ApiService from "./services/api.services";
 import UserComponent from "./components/User.component";
 import {Outlet} from "react-router-dom";
+import UserDetails from "./pages/UserDetails";
 
 const Users = () => {
 
@@ -21,6 +22,7 @@ apiService.getAllData().then(valua=> setUsers(valua))
                 <hr/>
             <div>
                 <h3>details about user</h3>
+                <h4>Це виводить дані JSON.stringify(user) з компоненти UserDetails</h4>
                 {/*динамічне додавання кожного елемента шляху (id зі своїм номером)*/}
                 {/*динамічний сегмент запишемо в АРР компоненті*/}
                 <Outlet/>
