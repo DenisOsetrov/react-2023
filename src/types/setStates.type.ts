@@ -2,7 +2,7 @@ import {Dispatch, SetStateAction} from "react";
 
 export type ISetState<T> = Dispatch<SetStateAction<T>>
 
-//В вашому коді оголошено тип ISetState<T>,
+// В вашому коді оголошено тип ISetState<T>,
 // який є generic-типом і використовується для опису типу функції setState компонента React.
 
 // Тип Dispatch<A> є типом даних, який використовується для передачі функції-диспетчера (dispatcher function),
