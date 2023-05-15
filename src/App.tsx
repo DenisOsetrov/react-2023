@@ -1,11 +1,6 @@
 // В directory types - зберігаємо всі типи.
-//   - В ній створюємо useStates.type.ts - типізовані state
+//   - В ній створюємо setStates.type.ts - типізовані state
 //   - В ній створюємо axiosRes.type.ts
-
-
-
-
-
 
 
 
